@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package media;
+
+option go_package = "github.com/sasha-riabchuk/sendl-proto/gen/go/media;media";
+
+// A request to get media info for a given upload ID
+message GetMediaForUploadIDRequest {
+  string upload_id = 1;
+}
+
+// The response contains all media data needed for publishing
+message GetMediaForUploadIDResponse {
+  string upload_id = 1;
+  string app_user_id = 2;
+  repeated MediaItem medias = 3;
+  string cover_url = 4;
+}
+
+message MediaItem {
+  string url = 1;
+  string type = 2; // "image", "video", etc.
+  int32 order = 3; // for carousels
+}
+
+service MediaService {
+  rpc GetMediaForUploadID(GetMediaForUploadIDRequest) returns (GetMediaForUploadIDResponse);
+}
