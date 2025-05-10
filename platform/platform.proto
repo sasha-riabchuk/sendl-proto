@@ -5,13 +5,14 @@ package platform;
 option go_package = "github.com/sasha-riabchuk/sendl-proto/gen/go/platform;platform";
 
 service PlatformService {
-  rpc GetTokensForAppUserID(GetTokensRequest) returns (GetTokensResponse);
+  rpc GetToken(GetTokenRequest) returns (GetTokenResponse);
 }
 
-message GetTokensRequest {
-  string app_user_id = 1;
+message GetTokenRequest {
+  string   app_user_id = 1;
+  string   parent_id   = 2;
 }
 
-message GetTokensResponse {
-  map<string, string> tokens = 1;
+message GetTokenResponse {
+  string token = 1;
 }
