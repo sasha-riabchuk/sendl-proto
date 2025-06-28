@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package platform;
 
-option go_package = "github.com/sasha-riabchuk/sendl-proto/gen/go/platform;platform";
+option go_package = "/platform";
 
 service PlatformService {
   rpc GetToken(GetTokenRequest) returns (GetTokenResponse);

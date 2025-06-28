@@ -1,10 +1,13 @@
-GEN_DIR := gen/go/platform
+.PHONY: generate clean
 
-.PHONY: gen
-gen:
-	mkdir -p $(GEN_DIR)
-	protoc \
-	  --proto_path=platform \
-	  --go_out=$(GEN_DIR) --go_opt=paths=source_relative \
-	  --go-grpc_out=$(GEN_DIR) --go-grpc_opt=paths=source_relative \
-	  platform/*.proto
+generate:
+	@echo "Generating protobuf files..."
+	@protoc \
+		--proto_path=. \
+		--go_out=gen/go \
+		--go-grpc_out=gen/go \
+		media/media.proto platform/platform.proto
+
+clean:
+	@echo "Cleaning generated files..."
+	@rm -rf gen/go/media/*.pb.go gen/go/platform/*.pb.go

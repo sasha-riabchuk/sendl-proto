@@ -2,13 +2,12 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v5.29.3
-// source: platform.proto
+// source: platform/platform.proto
 
 package platform
 
 import (
 	context "context"
-
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -118,5 +117,5 @@ var PlatformService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "platform.proto",
+	Metadata: "platform/platform.proto",
 }

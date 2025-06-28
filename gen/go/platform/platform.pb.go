@@ -2,17 +2,16 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v5.29.3
-// source: platform.proto
+// source: platform/platform.proto
 
 package platform
 
 import (
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
-
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
 const (
@@ -32,7 +31,7 @@ type GetTokenRequest struct {
 
 func (x *GetTokenRequest) Reset() {
 	*x = GetTokenRequest{}
-	mi := &file_platform_proto_msgTypes[0]
+	mi := &file_platform_platform_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44,7 +43,7 @@ func (x *GetTokenRequest) String() string {
 func (*GetTokenRequest) ProtoMessage() {}
 
 func (x *GetTokenRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_platform_proto_msgTypes[0]
+	mi := &file_platform_platform_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -57,7 +56,7 @@ func (x *GetTokenRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTokenRequest.ProtoReflect.Descriptor instead.
 func (*GetTokenRequest) Descriptor() ([]byte, []int) {
-	return file_platform_proto_rawDescGZIP(), []int{0}
+	return file_platform_platform_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *GetTokenRequest) GetAppUserId() string {
@@ -83,7 +82,7 @@ type GetTokenResponse struct {
 
 func (x *GetTokenResponse) Reset() {
 	*x = GetTokenResponse{}
-	mi := &file_platform_proto_msgTypes[1]
+	mi := &file_platform_platform_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -95,7 +94,7 @@ func (x *GetTokenResponse) String() string {
 func (*GetTokenResponse) ProtoMessage() {}
 
 func (x *GetTokenResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_platform_proto_msgTypes[1]
+	mi := &file_platform_platform_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -108,7 +107,7 @@ func (x *GetTokenResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTokenResponse.ProtoReflect.Descriptor instead.
 func (*GetTokenResponse) Descriptor() ([]byte, []int) {
-	return file_platform_proto_rawDescGZIP(), []int{1}
+	return file_platform_platform_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *GetTokenResponse) GetToken() string {
@@ -118,37 +117,37 @@ func (x *GetTokenResponse) GetToken() string {
 	return ""
 }
 
-var File_platform_proto protoreflect.FileDescriptor
+var File_platform_platform_proto protoreflect.FileDescriptor
 
-const file_platform_proto_rawDesc = "" +
+const file_platform_platform_proto_rawDesc = "" +
 	"\n" +
-	"\x0eplatform.proto\x12\bplatform\"N\n" +
+	"\x17platform/platform.proto\x12\bplatform\"N\n" +
 	"\x0fGetTokenRequest\x12\x1e\n" +
 	"\vapp_user_id\x18\x01 \x01(\tR\tappUserId\x12\x1b\n" +
 	"\tparent_id\x18\x02 \x01(\tR\bparentId\"(\n" +
 	"\x10GetTokenResponse\x12\x14\n" +
 	"\x05token\x18\x01 \x01(\tR\x05token2T\n" +
 	"\x0fPlatformService\x12A\n" +
-	"\bGetToken\x12\x19.platform.GetTokenRequest\x1a\x1a.platform.GetTokenResponseB@Z>github.com/sasha-riabchuk/sendl-proto/gen/go/platform;platformb\x06proto3"
+	"\bGetToken\x12\x19.platform.GetTokenRequest\x1a\x1a.platform.GetTokenResponseB\vZ\t/platformb\x06proto3"
 
 var (
-	file_platform_proto_rawDescOnce sync.Once
-	file_platform_proto_rawDescData []byte
+	file_platform_platform_proto_rawDescOnce sync.Once
+	file_platform_platform_proto_rawDescData []byte
 )
 
-func file_platform_proto_rawDescGZIP() []byte {
-	file_platform_proto_rawDescOnce.Do(func() {
-		file_platform_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_platform_proto_rawDesc), len(file_platform_proto_rawDesc)))
+func file_platform_platform_proto_rawDescGZIP() []byte {
+	file_platform_platform_proto_rawDescOnce.Do(func() {
+		file_platform_platform_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_platform_platform_proto_rawDesc), len(file_platform_platform_proto_rawDesc)))
 	})
-	return file_platform_proto_rawDescData
+	return file_platform_platform_proto_rawDescData
 }
 
-var file_platform_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_platform_proto_goTypes = []any{
+var file_platform_platform_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_platform_platform_proto_goTypes = []any{
 	(*GetTokenRequest)(nil),  // 0: platform.GetTokenRequest
 	(*GetTokenResponse)(nil), // 1: platform.GetTokenResponse
 }
-var file_platform_proto_depIdxs = []int32{
+var file_platform_platform_proto_depIdxs = []int32{
 	0, // 0: platform.PlatformService.GetToken:input_type -> platform.GetTokenRequest
 	1, // 1: platform.PlatformService.GetToken:output_type -> platform.GetTokenResponse
 	1, // [1:2] is the sub-list for method output_type
@@ -158,26 +157,26 @@ var file_platform_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_platform_proto_init() }
-func file_platform_proto_init() {
-	if File_platform_proto != nil {
+func init() { file_platform_platform_proto_init() }
+func file_platform_platform_proto_init() {
+	if File_platform_platform_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_platform_proto_rawDesc), len(file_platform_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_platform_platform_proto_rawDesc), len(file_platform_platform_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_platform_proto_goTypes,
-		DependencyIndexes: file_platform_proto_depIdxs,
-		MessageInfos:      file_platform_proto_msgTypes,
+		GoTypes:           file_platform_platform_proto_goTypes,
+		DependencyIndexes: file_platform_platform_proto_depIdxs,
+		MessageInfos:      file_platform_platform_proto_msgTypes,
 	}.Build()
-	File_platform_proto = out.File
-	file_platform_proto_goTypes = nil
-	file_platform_proto_depIdxs = nil
+	File_platform_platform_proto = out.File
+	file_platform_platform_proto_goTypes = nil
+	file_platform_platform_proto_depIdxs = nil
 }

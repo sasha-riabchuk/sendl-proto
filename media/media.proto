@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package media;
 
-option go_package = "github.com/sasha-riabchuk/sendl-proto/gen/go/media;media";
+option go_package = "/media";
 
 // A request to get media info for a given upload ID
 message GetMediaForUploadIDRequest {
@@ -17,6 +17,12 @@ message GetMediaForUploadIDResponse {
   string cover_url = 4;
 }
 
+message GetCoverForUploadIDResponse {
+  string upload_id = 1;
+  string app_user_id = 2;
+  string cover_url = 3;
+}
+
 message MediaItem {
   string url = 1;
   string type = 2; // "image", "video", etc.
@@ -25,4 +31,5 @@ message MediaItem {
 
 service MediaService {
   rpc GetMediaForUploadID(GetMediaForUploadIDRequest) returns (GetMediaForUploadIDResponse);
+  rpc GetCoverForUploadID(GetMediaForUploadIDRequest) returns (GetCoverForUploadIDResponse);
 }
